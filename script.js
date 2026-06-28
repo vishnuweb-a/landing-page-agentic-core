@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Dynamic mouse glow effect on glass cards
-    const cards = document.querySelectorAll('.feature-card, .glass-card, .glass-container');
+    const cards = document.querySelectorAll('.feature-card, .glass-card, .glass-container, .payload-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', e => {
@@ -65,4 +65,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Typing animation for hero payload code block
+    const codeLines = document.querySelectorAll('.floating-card .code-line');
+    if (codeLines.length > 0) {
+        // Initially hide all code lines
+        codeLines.forEach(line => {
+            line.style.opacity = '0';
+            line.style.transform = 'translateX(-10px)';
+            line.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+        });
+
+        // Reveal lines one by one with delay
+        const revealCode = () => {
+            codeLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.opacity = '1';
+                    line.style.transform = 'translateX(0)';
+                }, 200 + (index * 150));
+            });
+        };
+
+        // Start reveal after a short delay
+        setTimeout(revealCode, 800);
+    }
+
+    // Navbar background opacity on scroll
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(7, 9, 14, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(7, 9, 14, 0.8)';
+            }
+        });
+    }
 });

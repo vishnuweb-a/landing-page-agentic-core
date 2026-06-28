@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForgeGuard | PoW-Backed Security Credentials</title>
-    <meta name="description" content="AI-powered threat detection badges formed on HACD that verify security audit completion for smart contracts and dApps.">
+    <title>ForgeGuard | Verified Audit Credentials on HACD</title>
+    <meta name="description" content="AI-powered verified audit badges issued through HACD Stack after ForgeGuard completes a real security audit. Each badge contains contract address, report hash, and ForgeGuard verification.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-grid"></div>
@@ -19,26 +19,29 @@
         </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#payload">Badge Payload</a></li>
             <li><a href="#features">Why HACD</a></li>
             <li><a href="#how-it-works">How it Works</a></li>
-            <li><a href="#stack-design">Stack Design</a></li>
-            <li><a href="#incubator">Incubator</a></li>
-            <li><a href="#announcements">Updates</a></li>
+            <li><a href="#stack-design">Credential Details</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#audit" class="btn btn-outline">Start Audit</a>
+        <a href="#audit" class="btn btn-outline">Request Audit</a>
     </nav>
 
     <header class="hero" id="about">
         <div class="hero-content">
             <div class="badge-tag">HACD Labs Incubator Cohort 2</div>
-            <h1 class="hero-title">The First <span class="text-gradient">PoW-Backed</span><br>Security Credential</h1>
-            <p class="hero-subtitle">Smart contract audits should be as hard to fake as the code they protect. ForgeGuard badges are formed through HACD Stack — each one anchored to a real PoW-mined container with a visible formation cost.</p>
-            <div class="hero-actions">
-                <a href="#audit" class="btn btn-primary">Form Your Badge</a>
-                <a href="#how-it-works" class="btn btn-secondary">Learn How Stack Works</a>
+            <div class="credential-badge">
+                <span class="credential-dot"></span>
+                Verified Credential Issuance
             </div>
-            <p class="hero-note">One audit. One HACD. One badge. Permanently verifiable.</p>
+            <h1 class="hero-title">The First <span class="text-gradient">PoW-Backed</span><br>Verified Audit Credential</h1>
+            <p class="hero-subtitle">ForgeGuard Audit Badges are issued through HACD Stack only after a real security audit. Each badge contains the audited contract address, report hash, and ForgeGuard's verification signature — not a public token launch.</p>
+            <div class="hero-actions">
+                <a href="#audit" class="btn btn-primary">Request Your Audit</a>
+                <a href="#how-it-works" class="btn btn-secondary">Learn How It Works</a>
+            </div>
+            <p class="hero-note">One audit. One HACD. One verified badge. Permanently verifiable.</p>
         </div>
         <div class="hero-visual">
             <div class="glass-card floating-card">
@@ -46,83 +49,128 @@
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
+                    <span class="card-filename">badge_payload.json</span>
                 </div>
                 <div class="card-body">
-                    <p class="code-line"><span class="keyword">import</span> { <span>ForgeGuard</span> } <span class="keyword">from</span> 'hacd-stack';</p>
-                    <p class="code-line">&nbsp;</p>
-                    <p class="code-line"><span class="keyword">const</span> audit = <span class="keyword">await</span> ForgeGuard.verify({</p>
-                    <p class="code-line">&nbsp;&nbsp;contract: <span class="string">"0x..."</span>,</p>
-                    <p class="code-line">&nbsp;&nbsp;container: <span class="string">"HACD-1"</span>,</p>
-                    <p class="code-line">&nbsp;&nbsp;stackCost: <span class="number">8</span> <span class="comment">// HAC</span></p>
-                    <p class="code-line">});</p>
-                    <p class="code-line">&nbsp;</p>
-                    <p class="code-line"><span class="function">console</span>.log(audit.status); <span class="comment">// "FORMED"</span></p>
+                    <p class="code-line"><span class="punctuation">{</span></p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"audited_project"</span>: <span class="string">"DeFiVault"</span>,</p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"contract_address"</span>: <span class="string">"0x7a25...f3d1"</span>,</p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"report_hash"</span>: <span class="string">"sha256:a1b2c3..."</span>,</p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"audit_date"</span>: <span class="string">"2026-06-24"</span>,</p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"forgeguard_verification"</span>: <span class="string">"fg_sig_v1:..."</span>,</p>
+                    <p class="code-line">&nbsp;&nbsp;<span class="key">"hacd_name"</span>: <span class="string">"ABEKYS"</span></p>
+                    <p class="code-line"><span class="punctuation">}</span></p>
                 </div>
-                <div class="card-badge">🛡️ VERIFIED</div>
+                <div class="card-badge">🛡️ VERIFIED CREDENTIAL</div>
             </div>
         </div>
     </header>
 
-    <section id="features" class="section">
+    <section id="payload" class="section">
+        <h2 class="section-title">What's Inside Every <span class="text-gradient">Audit Badge</span></h2>
+        <p class="section-desc">Every ForgeGuard badge contains a structured audit payload embedded in the HACD Stack. This is what makes the badge a verified credential — not just a token.</p>
+
+        <div class="payload-grid">
+            <div class="payload-card animate-on-scroll">
+                <div class="payload-icon">📄</div>
+                <h3>Audited Project</h3>
+                <p>Name of the project that completed the ForgeGuard audit</p>
+            </div>
+            <div class="payload-card animate-on-scroll" style="transition-delay: 0.05s;">
+                <div class="payload-icon">📍</div>
+                <h3>Contract Address</h3>
+                <p>On-chain address of the audited smart contract — independently verifiable</p>
+            </div>
+            <div class="payload-card animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="payload-icon">🔗</div>
+                <h3>Chain</h3>
+                <p>Blockchain where the audited contract is deployed</p>
+            </div>
+            <div class="payload-card animate-on-scroll" style="transition-delay: 0.15s;">
+                <div class="payload-icon">#️⃣</div>
+                <h3>Report Hash</h3>
+                <p>SHA-256 hash of the full audit report — verify integrity without trusting servers</p>
+            </div>
+            <div class="payload-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="payload-icon">📅</div>
+                <h3>Audit Date</h3>
+                <p>ISO 8601 timestamp of when the audit was completed</p>
+            </div>
+            <div class="payload-card animate-on-scroll" style="transition-delay: 0.25s;">
+                <div class="payload-icon">✍️</div>
+                <h3>ForgeGuard Verification</h3>
+                <p>Cryptographic signature proving ForgeGuard authorized this badge</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section dark-section">
         <h2 class="section-title">Security credentials must be <br><span class="text-gradient">unfakeable, traceable, and durable.</span></h2>
         <div class="features-grid">
             <div class="feature-card animate-on-scroll">
                 <div class="feature-icon">🔒</div>
                 <h3>Unfakeable</h3>
-                <p>Audit badges can be forged for free today. ForgeGuard requires a PoW-mined HACD container + 8 HAC formation cost. If you can't fake the container, you can't fake the credential.</p>
+                <p>Audit badges can be forged for free today. ForgeGuard requires a PoW-mined HACD container + HAC formation cost. Only ForgeGuard can issue badges after a real audit — no random stacking.</p>
             </div>
             <div class="feature-card animate-on-scroll" style="transition-delay: 0.1s;">
                 <div class="feature-icon">⛓️</div>
                 <h3>Permanently Verifiable</h3>
-                <p>Credentials are usually stored on centralized databases. ForgeGuard badge formation is recorded permanently on-chain, creating an undeniable provenance trail.</p>
+                <p>Credentials are usually stored on centralized databases. ForgeGuard badge payload — including contract address and report hash — is embedded on-chain permanently.</p>
             </div>
             <div class="feature-card animate-on-scroll" style="transition-delay: 0.2s;">
                 <div class="feature-icon">🔍</div>
-                <h3>Traceable</h3>
-                <p>There's usually no way to verify when or how a badge was created. Each ForgeGuard badge traces back to a specific HACD unit and a verifiable formation event.</p>
+                <h3>Independently Verifiable</h3>
+                <p>Anyone can check the badge payload on-chain — verify the contract address, report hash, and ForgeGuard's signature without trusting centralized servers.</p>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="section dark-section">
-        <h2 class="section-title">How Stack Works</h2>
-        <p class="section-desc">Forming a ForgeGuard badge is a deliberate, visible process.</p>
+    <section id="how-it-works" class="section">
+        <h2 class="section-title">How Credential Issuance Works</h2>
+        <p class="section-desc">ForgeGuard issues Verified Audit Badges — a structured, verifiable process controlled by ForgeGuard after a real audit.</p>
         
         <div class="steps-container">
             <div class="step animate-on-scroll">
                 <div class="step-number">01</div>
                 <div class="step-content">
-                    <h3>Complete Audit</h3>
-                    <p>Run your smart contract through ForgeGuard's AI audit pipeline to identify vulnerabilities.</p>
+                    <h3>Submit for Audit</h3>
+                    <p>Submit your smart contract to ForgeGuard's AI audit pipeline for security analysis.</p>
                 </div>
             </div>
             <div class="step animate-on-scroll">
                 <div class="step-number">02</div>
                 <div class="step-content">
-                    <h3>Receive Confirmation</h3>
-                    <p>ForgeGuard verifies audit completion and clears your project for badge formation.</p>
+                    <h3>ForgeGuard Audits & Verifies</h3>
+                    <p>ForgeGuard completes the audit, generates the report, computes the SHA-256 report hash, and signs the result with a verification signature.</p>
                 </div>
             </div>
             <div class="step animate-on-scroll">
                 <div class="step-number">03</div>
                 <div class="step-content">
-                    <h3>Prepare Resources</h3>
-                    <p>Acquire 1 HACD unit as the badge container, plus 8 HAC for the stack cost and network fee.</p>
+                    <h3>Assign Your HACD</h3>
+                    <p>The audited project provides a specific HACD name they own to anchor the badge, plus HAC for the stack cost and network fee.</p>
                 </div>
             </div>
             <div class="step animate-on-scroll">
                 <div class="step-number">04</div>
                 <div class="step-content">
-                    <h3>Form Your Badge</h3>
-                    <p>Enter your HACD name on the Launchpad and confirm the Stack transaction.</p>
+                    <h3>ForgeGuard Issues the Badge</h3>
+                    <p>ForgeGuard initiates the Stack transaction with the full audit payload — contract address, report hash, and verification signature — forming the badge on your HACD.</p>
+                </div>
+            </div>
+            <div class="step animate-on-scroll">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h3>Verify On-Chain</h3>
+                    <p>Your Verified Audit Badge is now permanently formed on your HACD. Anyone can verify the credential by checking the payload on-chain.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stack-design" class="section">
-        <h2 class="section-title">Stack Design & Details</h2>
-        <p class="section-desc">Launch Specification & Tokenomics</p>
+    <section id="stack-design" class="section dark-section">
+        <h2 class="section-title">Credential Details</h2>
+        <p class="section-desc">Verified Credential Issuance Specification</p>
         
         <div class="table-container animate-on-scroll">
             <table class="styled-table">
@@ -135,46 +183,51 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><strong>Issuance Model</strong></td>
+                        <td>Verified Credential Issuance</td>
+                        <td>Not a public token launch — ForgeGuard controls badge issuance</td>
+                    </tr>
+                    <tr>
                         <td><strong>Asset Type</strong></td>
-                        <td>SFT (Semi-Fungible Token)</td>
-                        <td>Security credential structure</td>
+                        <td>NFT (unique per audit)</td>
+                        <td>Each badge has a unique payload — different project, contract, report</td>
                     </tr>
                     <tr>
-                        <td><strong>Total Supply</strong></td>
-                        <td>500 Badges</td>
-                        <td>Fixed cap to maintain credential scarcity</td>
+                        <td><strong>Supply</strong></td>
+                        <td>Demand-driven</td>
+                        <td>One badge per completed audit — no fixed cap</td>
                     </tr>
                     <tr>
-                        <td><strong>HACD Lots</strong></td>
-                        <td>500</td>
-                        <td>1 badge per 1 HACD</td>
+                        <td><strong>HACD per Badge</strong></td>
+                        <td>1 HACD per 1 badge</td>
+                        <td>Each badge is anchored to a specific HACD unit</td>
                     </tr>
                     <tr>
                         <td><strong>Stack Cost</strong></td>
                         <td>8 HAC per HACD</td>
-                        <td>The on-chain visible formation input</td>
+                        <td>The on-chain visible formation input <em>(draft)</em></td>
                     </tr>
                     <tr>
-                        <td><strong>Total Formation Cost</strong></td>
-                        <td>4,000 HAC</td>
-                        <td>500 lots × 8 HAC</td>
+                        <td><strong>Who Can Issue</strong></td>
+                        <td>ForgeGuard only</td>
+                        <td>After completing a real security audit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Badge Payload</strong></td>
+                        <td>8 verified fields</td>
+                        <td>Project, contract address, chain, report hash, date, scope, verification, HACD</td>
                     </tr>
                     <tr>
                         <td><strong>Removal Logic</strong></td>
                         <td>Burn on Removal</td>
                         <td>Unstacking permanently destroys the badge to preserve integrity</td>
                     </tr>
-                    <tr>
-                        <td><strong>Prerequisite</strong></td>
-                        <td>ForgeGuard AI Audit</td>
-                        <td>Must complete the pipeline before formation</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <section id="incubator" class="section dark-section">
+    <section id="incubator" class="section">
         <h2 class="section-title">Incubator Fit Review</h2>
         <p class="section-desc">HACD Labs Cohort 2 Verdict</p>
         
@@ -184,25 +237,25 @@
             <ul style="list-style: none; padding: 0;">
                 <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                     <span style="position: absolute; left: 0; top: 0;">✅</span>
-                    <strong>Credible asset origin:</strong> Formation requires a real PoW-mined container and a HAC cost, providing a costly signal that gives the credential weight.
+                    <strong>Verified credential issuance:</strong> ForgeGuard controls badge issuance — only real audits produce badges. The issuer-gated model prevents speculation and ensures credential integrity.
+                </li>
+                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; top: 0;">✅</span>
+                    <strong>Embedded audit payload:</strong> Each badge contains the contract address, report hash, and ForgeGuard's verification signature — making it independently verifiable.
                 </li>
                 <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
                     <span style="position: absolute; left: 0; top: 0;">✅</span>
                     <strong>Scarce HACD containers:</strong> Each badge is tied to a specific, individually identifiable HACD unit, creating true 1:1 provenance.
                 </li>
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; top: 0;">✅</span>
-                    <strong>Durable state history:</strong> HACD's permanent on-chain state means a badge can be verified years later by tracing its formation.
-                </li>
                 <li style="padding-left: 1.5rem; position: relative;">
                     <span style="position: absolute; left: 0; top: 0;">✅</span>
-                    <strong>Community participation:</strong> Badge issuance is a participatory event. Projects actively form their badges on-chain.
+                    <strong>Durable state history:</strong> HACD's permanent on-chain state means a badge can be verified years later by tracing its formation and payload.
                 </li>
             </ul>
         </div>
     </section>
 
-    <section id="announcements" class="section">
+    <section id="announcements" class="section dark-section">
         <h2 class="section-title">Latest Announcements</h2>
         <div class="features-grid">
             <div class="glass-card tweet-card animate-on-scroll">
@@ -213,7 +266,7 @@
                         <span class="text-muted">@ForgeGuard</span>
                     </div>
                 </div>
-                <p>A new project is preparing to issue through HACD Stack.<br><br>ForgeGuard — AI-powered security audit badges, formed on HACD. Not just another badge. A PoW-backed security credential.<br><br>Bitcoin proved PoW for money.<br>HACD brings PoW to assets. 🚀</p>
+                <p>A new project is preparing to issue verified credentials through HACD Stack.<br><br>ForgeGuard — AI-powered security audit badges, issued on HACD after a real audit. Not a public token launch. A verified audit credential. 🚀</p>
             </div>
             
             <div class="glass-card tweet-card animate-on-scroll" style="transition-delay: 0.1s;">
@@ -224,7 +277,7 @@
                         <span class="text-muted">@ForgeGuard</span>
                     </div>
                 </div>
-                <p>Builders: if you've completed a security audit, how do you prove it?<br><br>A PDF? A logo on your site? None of these are verifiable.<br><br>ForgeGuard is changing this with HACD Stack. 1 audit → 1 HACD → 1 badge. Formed. Permanent. Verifiable. 🔒</p>
+                <p>Builders: if you've completed a security audit, how do you prove it?<br><br>ForgeGuard badges contain your contract address, report hash, and our verification signature — all on-chain. Independently verifiable. 🔒</p>
             </div>
 
             <div class="glass-card tweet-card animate-on-scroll" style="transition-delay: 0.2s;">
@@ -235,22 +288,42 @@
                         <span class="text-muted">@ForgeGuard</span>
                     </div>
                 </div>
-                <p>Why do security audit badges need PoW?<br><br>Today: Anyone can copy an image from a server.<br>With HACD Stack: Each badge requires a PoW-mined container and a real cost.<br><br>Formation ≠ minting. Cost of creation = credibility.</p>
+                <p>Each ForgeGuard badge requires:<br><br>• A completed, real ForgeGuard audit<br>• 1 HACD unit (PoW-mined container)<br>• ForgeGuard's verification signature<br><br>Only ForgeGuard can issue badges. Every badge = a verified audit.</p>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="section dark-section">
+    <section id="faq" class="section">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container animate-on-scroll">
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>What is a ForgeGuard badge?</h3>
+                    <h3>Can anyone stack a ForgeGuard badge?</h3>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>A ForgeGuard badge is a PoW-backed security credential. It proves that a smart contract has completed the ForgeGuard AI audit pipeline. Each badge is formed on a unique HACD unit with a visible HAC formation cost, creating a permanent, verifiable on-chain record.</p>
+                    <p>No. ForgeGuard badges are verified credentials issued only after ForgeGuard completes a real security audit. Random HACD holders cannot self-form badges. Only ForgeGuard can initiate badge formation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What data is embedded in each badge?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Every badge contains: audited project name, contract address, blockchain, report hash (SHA-256), audit date, audit scope, ForgeGuard verification signature, and the HACD name it's anchored to.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How can I verify a badge is real?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Check the HACD on-chain. The badge payload includes ForgeGuard's verification signature and the report hash. You can independently verify both without trusting ForgeGuard's servers.</p>
                 </div>
             </div>
 
@@ -260,7 +333,7 @@
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. Each ForgeGuard badge is formed on a specific HACD unit. You need at least 1 HACD to form 1 badge. You also need HAC for the stack cost (formation cost) and the standard network fee.</p>
+                    <p>Yes. Each ForgeGuard badge is anchored to a specific HACD unit. The audited project needs at least 1 HACD to receive 1 badge. HAC is needed for the stack cost and network fee.</p>
                 </div>
             </div>
 
@@ -276,11 +349,11 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>Is this an investment product?</h3>
+                    <h3>Is this a public token launch?</h3>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>No. ForgeGuard badges are functional security credentials. They are not investment products, securities, or financial instruments. No profit, return, yield, or resale value is assured or promised.</p>
+                    <p>No. ForgeGuard operates as a verified credential issuance model. Badges are created only after ForgeGuard completes a real audit. ForgeGuard controls badge issuance — this is not an open formation where anyone can stack.</p>
                 </div>
             </div>
             
@@ -294,14 +367,24 @@
                 </div>
             </div>
 
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is this an investment product?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No. ForgeGuard badges are functional security credentials. They are not investment products, securities, or financial instruments. No profit, return, yield, or resale value is assured or promised.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="cta" class="cta-section section">
+    <section id="audit" class="cta-section section">
         <div class="glass-container text-center animate-on-scroll">
-            <h2 class="cta-title">Ready to secure your smart contract?</h2>
-            <p class="cta-desc">Bitcoin proved PoW for money. HACD brings PoW to assets. ForgeGuard brings PoW to security credentials.</p>
-            <a href="#start" class="btn btn-primary btn-large">Start AI Audit Pipeline</a>
+            <h2 class="cta-title">Ready to earn your verified audit badge?</h2>
+            <p class="cta-desc">Complete a real ForgeGuard audit. Receive a verified credential on HACD with your contract address, report hash, and ForgeGuard's verification signature — permanently on-chain.</p>
+            <a href="#start" class="btn btn-primary btn-large">Request Your Audit</a>
         </div>
     </section>
 
@@ -310,7 +393,7 @@
             <div class="footer-logo">
                 <span class="logo-icon">🛡️</span> ForgeGuard
             </div>
-            <p class="footer-note">This is a draft issuance package for review. Final parameters must be confirmed by the issuer and HACD Labs. This is not financial advice.</p>
+            <p class="footer-note">This is a draft issuance package for review. Final parameters must be confirmed by the issuer and HACD Labs. This is not financial advice. ForgeGuard badges are verified credentials, not a public token launch.</p>
             <div class="footer-links">
                 <a href="#">Twitter/X</a>
                 <a href="#">Telegram</a>
