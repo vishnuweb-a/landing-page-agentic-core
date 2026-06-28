@@ -85,10 +85,17 @@ h1, h2, h3, h4 {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(7, 9, 14, 0.8);
-    backdrop-filter: blur(12px);
+    background: transparent;
+    backdrop-filter: none;
     z-index: 100;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+}
+
+.navbar-scrolled {
+    background: rgba(7, 9, 14, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--glass-border);
 }
 
 .logo {

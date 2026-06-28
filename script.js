@@ -93,12 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar background opacity on scroll
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        window.addEventListener('scroll', () => {
+        const handleNavScroll = () => {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(7, 9, 14, 0.95)';
+                navbar.classList.add('navbar-scrolled');
             } else {
-                navbar.style.background = 'rgba(7, 9, 14, 0.8)';
+                navbar.classList.remove('navbar-scrolled');
             }
-        });
+        };
+        window.addEventListener('scroll', handleNavScroll);
+        handleNavScroll(); // Run on load in case page is already scrolled
     }
 });
